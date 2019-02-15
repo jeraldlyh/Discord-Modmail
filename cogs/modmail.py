@@ -203,7 +203,7 @@ class Modmail:
         else:
             await message.author.send(embed=em)
             overwrite = {
-                    ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False),
+                    message.guild.default_role: discord.PermissionOverwrite(read_messages=False),
                     support: discord.PermissionOverwrite(read_messages=True)
                     }
             channel = await guild.create_text_channel(
