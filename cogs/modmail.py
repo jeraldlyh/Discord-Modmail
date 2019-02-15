@@ -278,7 +278,7 @@ class Modmail:
             eembed = errorembed(description='**User is not already blocked.**')
             return await ctx.send(embed=eembed) 
 
-    @commands.command(name='close')
+    @commands.command()
     @commands.has_any_role('Server Support')
     async def help(self, ctx):
         if ctx.message.channel.name != 'mail-logs':
