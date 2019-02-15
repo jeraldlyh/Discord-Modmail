@@ -208,7 +208,7 @@ class Modmail:
                     }
             channel = await guild.create_text_channel(
                 name=self.format_name(author),
-                overwrites=overwrite
+                overwrites=overwrite,
                 category=categ
                 )
             await channel.edit(topic=topic)
