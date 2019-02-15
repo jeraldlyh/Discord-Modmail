@@ -286,8 +286,7 @@ class Modmail:
             eembed = errorembed(description='**{0} Commands can only be used in {1}**'.format(ctx.message.author.mention, logs.mention))
             return await ctx.send(embed=eembed)
         else:    
-            embed=discord.Embed(title="Available Commands", color=0xa53636)
-            embed.add_field(name='\u200b', value='**-reply** - Replies a support ticket\n **-close** - Closes a support ticket')
+            embed=discord.Embed(title="Available Commands", description='**-reply** - Replies a support ticket\n **-close** - Closes a support ticket', color=0xa53636)
             await ctx.send(embed=embed)
     
     
