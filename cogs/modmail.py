@@ -278,7 +278,19 @@ class Modmail:
             eembed = errorembed(description='**User is not already blocked.**')
             return await ctx.send(embed=eembed) 
 
-        
+    @commands.command(name='close')
+    @commands.has_any_role('Server Support')
+    async def help(self, ctx):
+        if ctx.message.channel.name != 'mail-logs':
+            logs = discord.utils.get(ctx.message.guild.channels, name='mail-logs')
+            eembed = errorembed(description='**{0} Commands can only be used in {1}**'.format(ctx.message.author.mention, logs.mention))
+            return await ctx.send(embed=eembed)
+        else:    
+            embed=discord.Embed(title="Available Commands", timestamp=timestamp, color=0xa53636)
+            embed.add_field(name='\u200b', value='**-reply** - Replies a support ticket\n **-close** - Closes a support ticket')
+            await ctx.send(embed=embed)
+    
+    
 # Adding the cog to main script
 def setup(bot):
     bot.add_cog(Modmail(bot))
