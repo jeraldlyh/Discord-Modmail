@@ -122,7 +122,6 @@ class Modmail:
         fmt = discord.Embed()
         fmt.description = message.content
         fmt.timestamp = message.created_at
-        print('sendmail')
         urls = re.findall(r'(https?://[^\s]+)', message.content)
 
         types = ['.png', '.jpg', '.gif', '.jpeg', '.webp']
@@ -149,7 +148,6 @@ class Modmail:
         await channel.send(embed=fmt)
 
     async def process_reply(self, message):
-        print('process')
         try:
             await message.delete()
         except discord.errors.NotFound:
@@ -225,7 +223,7 @@ class Modmail:
         '''Reply to users using this command.'''
         categ = discord.utils.get(ctx.guild.categories, id=ctx.channel.category_id)
         if categ is not None:
-            if categ.name == 'Mod Mail':
+            if categ.name == '📋 Support':
                 if 'User ID:' in ctx.channel.topic:
                     ctx.message.content = msg
                     await self.process_reply(ctx.message)
