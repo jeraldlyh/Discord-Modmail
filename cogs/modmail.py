@@ -151,8 +151,8 @@ class Modmail:
     async def process_reply(self, message):
         try:
             await message.delete()
-        except discord.errors.NotFound:
-            pass
+        except Exception as e:
+            print(e)
         await self.send_mail(message, message.channel, mod=True)
         user_id = int(message.channel.topic.split(': ')[1])
         user = self.bot.get_user(user_id)
