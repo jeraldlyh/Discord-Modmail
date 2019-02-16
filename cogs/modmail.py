@@ -149,6 +149,7 @@ class Modmail:
         await channel.send(embed=fmt)
 
     async def process_reply(self, message):
+        print('process')
         try:
             await message.delete()
         except discord.errors.NotFound:
