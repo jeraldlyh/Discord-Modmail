@@ -122,7 +122,7 @@ class Modmail:
         fmt = discord.Embed()
         fmt.description = message.content
         fmt.timestamp = message.created_at
-
+        print('sendmail')
         urls = re.findall(r'(https?://[^\s]+)', message.content)
 
         types = ['.png', '.jpg', '.gif', '.jpeg', '.webp']
@@ -151,8 +151,8 @@ class Modmail:
     async def process_reply(self, message):
         try:
             await message.delete()
-        except Exception as e:
-            print(e)
+        except discord.errors.NotFound:
+            pass
         await self.send_mail(message, message.channel, mod=True)
         user_id = int(message.channel.topic.split(': ')[1])
         user = self.bot.get_user(user_id)
