@@ -24,7 +24,7 @@ class Modmail:
                     ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False),
                     support: discord.PermissionOverwrite(read_messages=True)
                     }
-              categ = await ctx.guild.create_category(name='Mod Mail', overwrites=overwrite)
+              categ = await ctx.guild.create_category(name='📋 Support', overwrites=overwrite)
               #await categ.edit(position=0)
               c = await ctx.guild.create_text_channel(name='mail-logs', category=categ)
               await c.edit(topic='-block <userID> to block users.\n\n'
@@ -240,7 +240,7 @@ class Modmail:
                 eembed = errorembed(description='**No UserID provided.**')
                 return await ctx.send(embed=eembed)  
 
-        categ = discord.utils.get(ctx.guild.categories, name='Mod Mail')
+        categ = discord.utils.get(ctx.guild.categories, name='📋 Support')
         top_chan = categ.channels[0] #bot-info
         topic = str(top_chan.topic)
         topic += '\n' + id
@@ -264,7 +264,7 @@ class Modmail:
                 eembed = errorembed(description='**No UserID provided.**')
                 return await ctx.send(embed=eembed)  
 
-        categ = discord.utils.get(ctx.guild.categories, name='Mod Mail')
+        categ = discord.utils.get(ctx.guild.categories, name='📋 Support')
         top_chan = categ.channels[0] #bot-info
         topic = str(top_chan.topic)
         topic = topic.replace('\n'+id, '')
