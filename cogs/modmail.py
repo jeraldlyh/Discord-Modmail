@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 from cogs.utils.embed import passembed
 from cogs.utils.embed import errorembed
 
-class Modmail:
+class Modmail(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -209,7 +209,8 @@ class Modmail:
             support = discord.utils.get(guild.roles, name='Server Support')
             await channel.send('{0}'.format(support.mention), embed=self.format_info(message))
             await self.send_mail(message, channel, mod=False)
-
+    
+    @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.bot:
             return
