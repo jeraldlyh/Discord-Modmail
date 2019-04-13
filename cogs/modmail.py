@@ -203,7 +203,7 @@ class Modmail(commands.Cog):
             await message.author.send(embed=em)
             channel = await guild.create_text_channel(
                 name=self.format_name(author),
-                overwrites=guild.message.author(read_messages=True)
+                overwrites={guild.message.author(read_messages=True)}
                 category=categ
                 )
             await channel.edit(topic=topic)
