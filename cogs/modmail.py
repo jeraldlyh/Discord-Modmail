@@ -201,7 +201,7 @@ class Modmail(commands.Cog):
             await self.send_mail(message, channel, mod=False)
         else:
             await message.author.send(embed=em)
-            ={
+            overwrite={
             guild.message.author: discord.PermissionOverwrite(read_messages=True)
             }
             channel = await guild.create_text_channel(
