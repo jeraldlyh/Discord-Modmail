@@ -105,14 +105,14 @@ class Modmail(commands.Cog):
                     color = role.color
 
         em = discord.Embed(colour=color, description=desc)
-        em.set_footer(text='User ID: '+str(user.id))
+        em.set_footer(text=f'User Nickname: {user.nickname}')
         em.set_thumbnail(url=avi)
         em.set_author(name=user, icon_url=server.icon_url)
       
 
         if member:
             em.add_field(name='Member No.',value=str(member_number),inline = True)
-            em.add_field(name='Nickname', value=member.nick, inline=True)
+            em.add_field(name='Nickname', value=member.mention, inline=True)
             em.add_field(name='Roles', value=rolenames, inline=True)
 
         return em
