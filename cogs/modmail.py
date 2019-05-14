@@ -105,7 +105,6 @@ class Modmail(commands.Cog):
                     color = role.color
 
         em = discord.Embed(colour=color, description=desc)
-        em.set_footer(text=f'User Nickname: {user.nickname}')
         em.set_thumbnail(url=avi)
         em.set_author(name=user, icon_url=server.icon_url)
       
