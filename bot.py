@@ -29,5 +29,5 @@ if __name__ == "__main__":
             print(e)
 
             
-bot.run('NTQ1OTc3NTAwMjc1MDQ4NDQ4.XPEPLQ.IODsNW06zfj1J0XKFlpjW6R570c')
+bot.run('INSERT YOUR BOT TOKEN HERE')
     
