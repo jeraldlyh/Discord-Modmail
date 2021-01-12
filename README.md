@@ -16,4 +16,4 @@ Whenever a user sends a direct message to the bot, a channel/thread will be crea
 - Moderators must be awarded the `Server Support` role to gain permission for the modmail module.
 - Manually configure your discord ID in the script at **Lines 93 & 183**.
 - All threads are available under the catgegory titled `📋 Support`.
-- Tweak and configure the category name accordingly to your preference in the script by replacing CTRL+F and replace the default name stated above.
+- Tweak and configure the category name accordingly to your preference in the script by replacing the default name stated above in the script.
